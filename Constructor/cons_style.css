@@ -1,0 +1,121 @@
+.type_const_select {
+    position: relative;
+    margin: 0;
+    height: 30px;
+    padding: 5px 5px;
+    border: 1px solid #dddddd;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #000;
+}
+.label__constr > input {
+    visibility: hidden;
+    position: absolute;
+}
+.label__constr > input + img {
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.label__constr > input:checked + img {
+    border: 2px solid rgb(44, 208, 230);
+}
+
+.Order_Constructor {
+    max-width: 750px;
+    margin: auto;
+}
+
+.Constructor_result_img {
+    display: flex;
+    align-items: flex-start;
+}
+.Constructor_img {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.Step_1,
+.Step_2,
+.Step_3,
+.End {
+    width: 750px;
+    margin: auto;
+    height: 600px;
+    padding: 40px;
+
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.1);
+}
+
+.undtitle {
+    display: flex;
+}
+
+.label__constr {
+    padding: 5px;
+}
+
+.glass {
+    text-align: center;
+}
+
+.butn {
+    position: relative;
+    text-align: center;
+}
+.button_next {
+    height: 37px;
+    width: 74px;
+    border: none;
+
+    background-color: #50a0ff;
+    font-size: 14px;
+}
+
+.sel {
+    display: inline-block;
+    margin: 20px;
+}
+.sell{
+    display: inline-block;
+}
+/*.che{
+    margin-right: 205px;
+}*/
+p {
+    margin: 0;
+}
+select {
+    width: 280px;
+    height: 37px;
+}
+
+.check input[type="checkbox"] {
+    display: none;
+}
+
+.check input[type="checkbox"] + label {
+    width: 280px;
+    height: 37px;
+    padding: 5px;
+    border: 1px solid #50A0FF;
+    background-color: white;
+    color: #50A0FF;
+    text-align: center;
+    cursor: pointer;
+}
+
+.check input[type="checkbox"]:checked + label {
+    background-color: #50a0ff;
+    color: white;
+}
+
+.selcts{
+    background-color: #F1F1F1;
+    border: 0.5px solid #DDDDDD;
+    font-size: 14px;
+    font-weight: 600;
+}
+._error{
+    box-shadow: 0 0 15px red;
+}

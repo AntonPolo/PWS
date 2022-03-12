@@ -1,0 +1,35 @@
+.type_const_select{
+    position: relative;
+    margin: 0;
+    height: 30px;
+    padding: 5px 5px;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #000;
+}
+.label__constr > input{ 
+    visibility: hidden;
+    position: absolute;
+  }
+  .label__constr > input + img{
+    cursor:pointer;
+    border:2px solid transparent;
+  }
+  .label__constr > input:checked + img{
+    border:2px solid rgb(44, 208, 230);
+  }   
+.Step_1{
+    margin: 0 10px;
+}
+
+
+
+.Constructor_result_img {
+    display: flex;
+    align-items: flex-start;
+}
+.Constructor_img {
+  display: flex;
+  align-items: flex-start;
+}
