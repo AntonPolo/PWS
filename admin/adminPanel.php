@@ -1,24 +1,317 @@
 <?
+include('../php/DB.php');
 session_start();
-if (isset($_SESSION['admin'])):
+if (isset($_SESSION['admin'])) :
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin-панель</title>
-</head>
-<body>
-    <h1>eto vona</h1>
-    <a href="auth/exit.php">Выход</a>
 
-</body>
-</html>
 
-<? else: ?>
-    
-   <? header('Location: auth/singin.php'); ?>
+
+
+    <?php $pages = get_all_pages(); ?>
+    <?php $menu_points = get_all_menu(); ?>
+
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin-панель</title>
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="./adminStyle.css">
+    </head>
+
+    <body>
+
+
+
+
+        <!-- Формы редактирования главной страницы -->
+        <?php if (isset($_GET['page_url']) && $_GET['page_url'] == "./index.php") : ?>
+
+
+            <form action="./img.php" id="form_slider_img" enctype="multipart/form-data" method="post">
+                <p>Загрузка нового изображения для слайдера</p>
+                <p><input type="file" name="slider_img" accept="image/jpg">
+                    <input type="submit" value="Отправить">
+                </p>
+            </form>
+
+
+            <p>Удаление изображения из слайдера</p>
+            <div class="del_img" style="display: flex;">
+
+                <?php
+                $slide_urls = get_all_slide_url("");
+                foreach ($slide_urls as $slide_url) :
+                ?>
+
+                    <div class="container">
+                        <div>
+                            <span class="close-image-icon">
+                                <button type="button" onclick="deleteSlide('<?php echo $slide_url['slider_img_url']; ?>')" class="deleteSlide close m-4" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </span>
+                            <img class="img-thumbnail img-fluid w-100" src="<?php echo $slide_url['slider_img_url']; ?>">
+                        </div>
+                    </div>
+
+
+                <?php endforeach; ?>
+
+
+            </div>
+            <a href='./adminPanel.php'><button>Назад</button></a> <br>
+            <a href='auth/exit.php'><button>Главная страница</button></a>
+            <!-- ----------------------------- -->
+
+
+
+            <!-- Форма добавления нового фото в Наши работы -->
+            <?php //elseif (isset($_GET['page_url']) && $_GET['page_url'] == "./my_works.php") : 
+            ?>
+
+
+            <!-- <form action="./img.php" id="form_slider_img" enctype="multipart/form-data" method="post">
+                <p>Загрузка нового изображения для слайдера</p>
+                <p><input type="file" name="slider_img" accept="image/jpg">
+                    <input type="submit" value="Отправить">
+                </p>
+            </form>
+
+
+           
+
+
+            
+            <a href='./adminPanel.php'><button>Назад</button></a> <br>
+            <a href='auth/exit.php'><button>Главная страница</button></a>-->
+            <!-- ----------------------------- -->
+
+
+
+
+            <!-- Форма добавления drop down страницы -->
+        <?php elseif (isset($_GET['menu_point_id'])) : ?>
+
+
+            <form action="./preview.php" method="post">
+                <label>Заголовок</label><input type="text" name="page_title_preview" id="page_title">
+                <input type="text" name="menu_point_id" style="display: none;" value="<?php echo $_GET['menu_point_id']; ?>">
+                <label>Содержимое страницы (HTML)</label><textarea name="page_content_preview" style="width: 50%; margin-left: 25%"></textarea>
+                <input type="submit" value="Предпоказ">
+            </form>
+            <a href='./adminPanel.php'><button>Назад</button></a> <br>
+            <a href='./auth/exit.php'><button>Главная страница</button></a>
+            <!-- ----------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Форма редактирования drop down страницы -->
+        <?php elseif (isset($_GET['file_url']) && isset($_GET['Page_title'])) :
+            $Page_title = $_GET['Page_title'];
+            $pathToFile = $_GET['file_url'];
+            $GetContentFile = file_get_contents("." . $_GET['file_url']);
+
+        ?>
+
+
+            <form action="./preview.php" method="post">
+                <label>Заголовок</label><input type="text" name="page_title_preview" value="<?php echo $Page_title; ?>">
+                <input type="text" name="file_url" style="display: none;" value="<?php echo $pathToFile; ?>">
+                <label>Содержимое страницы (HTML)</label><textarea name="page_content_preview" style="width: 70%; margin-left: 15%; min-height: 75vh"><?php echo $GetContentFile; ?></textarea>
+                <input type="submit" value="Предпоказ">
+            </form>
+            <a href='./adminPanel.php'><button>Назад</button></a> <br>
+            <a href='./auth/exit.php'><button>Главная страница</button></a>
+            <!-- ----------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Главная страница Админ-панели -->
+        <?php else : ?>
+
+
+            <h2>Таблица функционала основных страниц</h2>
+
+
+            <table>
+                <tr>
+
+                    <th>Заголовок</th>
+                    <th>URL</th>
+
+                </tr>
+
+                <?php foreach ($pages as $page) :
+
+
+
+                    if ($page['Page_title'] == "Главная страница") : ?>
+                        <tr>
+
+                            <td><?php echo $page['Page_title']; ?></td>
+                            <td><?php echo $page['file_url']; ?></td>
+                            <td><button class="edit_main_page" onclick="document.location='./adminPanel.php?page_url=<?php echo $page['file_url']; ?>'">Редактировать слайдер</button></td>
+
+                        </tr>
+
+                    <?php elseif ($page['Page_title'] == "Конструктор заказа") :
+
+                        continue;
+
+                    ?>
+
+
+
+                    <?php /*document.location='./adminPanel.php?page_url=<?php echo $page['file_url']; ?>' */ elseif ($page['Page_title'] == "Наши работы") : ?>
+                        <tr>
+
+                            <td><?php echo $page['Page_title']; ?></td>
+                            <td><?php echo $page['file_url']; ?></td>
+                            <td><button class="edit_works_page">Добавить фото</button><button class="close_edit_works_page" style="display: none;">Закрыть форму</button></td>
+                            <td>
+                                <div id="Photo_url"  style="display: none;"><label for="Photo_url">Ссылка на изображение</label><input type="text" name="Photo_url" placeholder="https://i.yapx.ru/RXyn5.jpg"></div>
+                                <div id="Photo_title"  style="display: none;"><label for="Photo_title">Описание изображения</label><input type="text" name="Photo_title" placeholder="Балконный блок"></div>
+                                <button class="add_new_photo" style="display: none;">Добавить</button>
+                            </td>
+                        </tr>
+
+
+            </table>
+
+            <br><br><br><br><br>
+            <h2>Таблица редактирования и удаления страниц из выпадающих списков меню</h2>
+            <table>
+                <tr>
+                    <th> </th>
+                    <th>Заголовок</th>
+                    <th>URL</th>
+                    <th> </th>
+                    <th> </th>
+                </tr>
+
+            <?php else : ?>
+                <tr>
+                    <td>
+
+                        <form action="./preview.php" method="post">
+                            <input type="text" name="page_id_preview" style="display: none;" value="<?php echo $page['id']; ?>">
+                            <input type="text" name="page_title_preview" style="display: none;" value="<?php echo $page['Page_title']; ?>">
+                            <?php
+
+                            $GetContentFile = file_get_contents("." . $page['file_url']);
+                            $GetContentFile = str_replace('"',"'",$GetContentFile);
+
+                            ?>
+                            <input type="text" name="page_content_preview" style="display: none;" value="<?php echo $GetContentFile; ?>">
+                            <input type="submit" value="Показать страницу">
+                        </form>
+
+
+
+
+                    </td>
+                    <td><?php echo $page['Page_title']; ?></td>
+                    <td><?php echo $page['file_url']; ?></td>
+                    <td><button class="edit" onclick="document.location='./adminPanel.php?file_url=<?php echo $page['file_url']; ?>&Page_title=<?php echo $page['Page_title']; ?>'">Редактировать</button></td>
+                    <td><button class="delete" onclick="deletePage('<?php echo $page['file_url']; ?>','<?php echo $page['Page_title']; ?>')">Удалить</button></td>
+                </tr>
+
+
+            <?php endif; ?>
+
+
+
+
+
+        <?php endforeach; ?>
+            </table>
+
+
+
+            <br><br><br><br><br>
+
+            <h2>Таблица добавления страниц в выпадающие списки меню</h2>
+
+            <table>
+                <tr>
+
+                    <th>Пункт меню</th>
+                </tr>
+
+                <?php foreach ($menu_points as $menu_point) :
+                    if ($menu_point['drop-down'] == 1) :
+                ?>
+                        <tr>
+                            <td><?php echo $menu_point['menu_title'] . " (drop down)"; ?></td>
+                            <td><button class="add_page" onclick="document.location='./adminPanel.php?menu_point_id=<?php echo $menu_point['id']; ?>'">Добавить страницу</button></td>
+                        </tr>
+
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </table>
+
+            <a href="./auth/exit.php"><button class="admin_exit">Выход</button></a>
+
+        <?php endif; ?>
+
+        <!-- ----------------------------- -->
+
+
+
+
+
+
+
+
+
+        <script src="../js/jQuery.js"></script>
+        <script src="../js/bootstrap.bundle.js"></script>
+        <script src="./admin_fun.js"></script>
+
+
+        <!-- Скрипт который делает адаптацию textarea под содержимое -->
+        <script>
+            $(document).on("input", "textarea", function() {
+                $(this).outerHeight(38).outerHeight(this.scrollHeight);
+            });
+        </script>
+        <!-- ----------------------------- -->
+
+
+    </body>
+
+    </html>
+
+<? else : ?>
+
+    <? header('Location: auth/singin.php'); ?>
 
 <? endif; ?>

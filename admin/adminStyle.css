@@ -1,0 +1,20 @@
+.container>div {
+    position: relative;
+    /* Чтобы .close не выходил за рамки .container */
+  }
+  
+  .close {
+    position: absolute;
+    right: 0;
+    /* Ставим крестик справа */
+  }
+  
+  .close-image-icon {
+    display: none;
+    /* Скрываем крестик по умолчанию */
+  }
+  
+  .container>div:hover .close-image-icon {
+    display: block !important;
+    /* При навидении на div в .container показать крестик */
+  }
