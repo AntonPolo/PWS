@@ -8,32 +8,77 @@
     font-size: 14px;
     color: #000;
 }
-.label__constr > input {
+
+.label__constr>input {
     visibility: hidden;
     position: absolute;
 }
-.label__constr > input + img {
+
+.label__constr>input+img {
     cursor: pointer;
     border: 2px solid transparent;
 }
-.label__constr > input:checked + img {
-    border: 2px solid rgb(44, 208, 230);
+
+.label__constr>input:checked+img {
+    border: 2px solid #0075FF;
+}
+
+.label__constr>input:hover+img {
+    border: 2px solid #0075FF;
 }
 
 .Order_Constructor {
     max-width: 750px;
     margin: auto;
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 .Constructor_result_img {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
 }
+
+.Constructor_result_img img {
+    width: 25%;
+    max-width: 128px;
+}
+
 .Constructor_img {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    margin: 20px;
 }
+
+@media (max-width:767px) {
+    .Constructor_img img {
+        position: static !important;
+        display: inline-block;
+        width: 28% !important;
+        max-width: 129px !important;
+        height: 100% !important;
+    }
+}
+
+@media (max-width:767px) {
+    .media {
+        width: 100%;
+    }
+}
+
+.mirror {
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipV;
+    -ms-filter: 'FlipV'
+}
+
 
 .Step_1,
 .Step_2,
@@ -41,10 +86,12 @@
 .End {
     width: 750px;
     margin: auto;
-    height: 600px;
+    min-height: 600px;
     padding: 40px;
-
-    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 30%);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .undtitle {
@@ -57,36 +104,80 @@
 
 .glass {
     text-align: center;
+    text-align: center;
+    overflow: auto;
+    max-height: 355px;
 }
 
-.butn {
+
+/*.butn {
+    margin-top: 20px;
     position: relative;
     text-align: center;
-}
-.button_next {
+}*/
+
+.button_next,
+.button_prev {
     height: 37px;
     width: 74px;
     border: none;
-
-    background-color: #50a0ff;
+    background-color: #0075FF;
     font-size: 14px;
+    color: white;
+}
+
+.button-const {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width:555px) {
+    .Step_2 .button-const {
+        margin-top: 165px;
+    }
 }
 
 .sel {
     display: inline-block;
     margin: 20px;
 }
-.sell{
-    display: inline-block;
+
+.sell {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    font-weight: 500;
 }
+
+@media (max-width: 464px) {
+    .step3-item {
+        display: flex !important;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 464px) {
+    .sell {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.sell input {
+    margin-right: 5px;
+}
+
+
 /*.che{
     margin-right: 205px;
 }*/
+
 p {
     margin: 0;
 }
+
 select {
-    width: 280px;
+    width: 100%;
     height: 37px;
 }
 
@@ -94,28 +185,368 @@ select {
     display: none;
 }
 
-.check input[type="checkbox"] + label {
-    width: 280px;
+.check input[type="checkbox"]+label {
+    width: 100%;
     height: 37px;
     padding: 5px;
-    border: 1px solid #50A0FF;
+    border: 1px solid #0075FF;
     background-color: white;
-    color: #50A0FF;
+    color: #0075FF;
     text-align: center;
     cursor: pointer;
 }
 
-.check input[type="checkbox"]:checked + label {
-    background-color: #50a0ff;
+.check input[type="checkbox"]:checked+label {
+    background-color: #0075FF;
     color: white;
 }
 
-.selcts{
+.selcts {
     background-color: #F1F1F1;
     border: 0.5px solid #DDDDDD;
     font-size: 14px;
     font-weight: 600;
 }
-._error{
+
+._error {
     box-shadow: 0 0 15px red;
+}
+
+.const-send {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+.const-b-send {
+    background-color: #0075FF;
+    color: white;
+    border: none;
+    height: 37px;
+}
+
+.const-b-send:hover {
+    background-color: rgb(48, 196, 35);
+    /*transition: background-color 0.5s;*/
+    transition: background-color .2s;
+}
+
+.End .button_prev:hover {
+    background-color: rgb(196, 35, 35);
+    /*transition: background-color 0.5s;*/
+    transition: background-color .2s;
+}
+
+.End fieldset {
+    border: 1px solid #cccccc;
+    padding: 10px 5px;
+}
+
+.End legend {
+    float: none;
+    width: auto;
+}
+
+.step3-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.user_phone {
+    padding-left: 30px;
+    background: url(/img/phone.png) no-repeat left;
+    background-size: 30px;
+    height: 40px;
+}
+
+.user_name {
+    padding-left: 30px;
+    background: url(/img/name.png) no-repeat left;
+    background-size: 30px;
+    height: 40px;
+}
+
+.const-send .input-group:hover {
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 25%);
+}
+
+.sizer-up {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 12px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    /**/
+    border-top: 1px solid #DDDDDD;
+    height: 1px;
+    box-sizing: border-box;
+}
+
+.sizer-up input {
+    position: absolute;
+    /* left: 168.5px; */
+    top: -15px;
+    /**/
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.sizer-left {
+    position: absolute;
+    left: 0;
+    top: 21px;
+    width: 12px;
+    height: 219px;
+    padding-left: 10px;
+    /**/
+    border-left: 1px solid #dddddd;
+    width: 1px;
+    box-sizing: border-box;
+}
+
+.sizer-left input {
+    position: absolute;
+    left: -25px;
+    top: 93px;
+    /**/
+    transform: rotate(-90deg);
+    width: 50px;
+    height: 30px;
+    background-color: #f5f5f5;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+}
+
+.sizer-right {
+    position: absolute;
+    left: 100%;
+    top: 21px;
+    width: 12px;
+    height: 282px;
+    padding-left: 10px;
+    /**/
+    border-left: 1px solid #dddddd;
+    width: 1px;
+    box-sizing: border-box;
+}
+
+.sizer-right input {
+    position: absolute;
+    left: -25px;
+    top: 124px;
+    /**/
+    transform: rotate(90deg);
+    width: 50px;
+    height: 30px;
+    background-color: #f5f5f5;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+}
+
+.sizer-bottom-win {
+    position: absolute;
+    left: 4%;
+    top: 256px;
+    width: 129px;
+    height: 12px;
+    padding-top: 10px;
+    /**/
+    border-top: 1px solid #DDDDDD;
+    height: 1px;
+    box-sizing: border-box;
+}
+
+.sizer-bottom-win input {
+    position: absolute;
+    left: 39.5px;
+    top: -15px;
+    /**/
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.sizer-bottom-door {
+    position: absolute;
+    right: 4%;
+    top: 319px;
+    width: 129px;
+    height: 12px;
+    padding-top: 10px;
+    /**/
+    border-top: 1px solid #DDDDDD;
+    height: 1px;
+    box-sizing: border-box;
+}
+
+.sizer-bottom-door input {
+    position: absolute;
+    left: 39.5px;
+    top: -15px;
+    /**/
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.sizer-left-mirror {
+    position: absolute;
+    left: 0;
+    top: 21px;
+    width: 12px;
+    height: 282px;
+    padding-left: 10px;
+    border-left: 1px solid #dddddd;
+    width: 1px;
+    box-sizing: border-box;
+}
+
+.sizer-left-mirror input {
+    position: absolute;
+    left: -25px;
+    top: 124px;
+    /**/
+    transform: rotate(90deg);
+    width: 50px;
+    height: 30px;
+    background-color: #f5f5f5;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+}
+
+.sizer-right-mirror {
+    position: absolute;
+    left: 100%;
+    top: 21px;
+    width: 12px;
+    height: 219px;
+    padding-left: 10px;
+    border-left: 1px solid #dddddd;
+    width: 1px;
+    box-sizing: border-box;
+}
+
+.sizer-right-mirror input {
+    position: absolute;
+    left: -25px;
+    top: 93px;
+    /**/
+    transform: rotate(-90deg);
+    width: 50px;
+    height: 30px;
+    background-color: #f5f5f5;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+}
+
+.sizer-bottom-door-mirror {
+    position: absolute;
+    left: 4%;
+    top: 319px;
+    width: 129px;
+    height: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #DDDDDD;
+    height: 1px;
+    box-sizing: border-box;
+}
+
+.sizer-bottom-door-mirror input {
+    position: absolute;
+    left: 39.5px;
+    top: -15px;
+    /**/
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.sizer-bottom-win-mirror {
+    position: absolute;
+    right: 4%;
+    top: 256px;
+    width: 129px;
+    height: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #DDDDDD;
+    height: 1px;
+    box-sizing: border-box;
+}
+
+.sizer-bottom-win-mirror input {
+    position: absolute;
+    left: 39.5px;
+    top: -15px;
+    /**/
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.sizer-bottom-door-chebu {
+    position: absolute;
+    left: 35%;
+    top: 319px;
+    width: 129px;
+    height: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #DDDDDD;
+    height: 1px;
+    box-sizing: border-box;
+}
+
+.sizer-bottom-door-chebu input {
+    position: absolute;
+    left: 39.5px;
+    top: -15px;
+    /**/
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 12px;
 }
