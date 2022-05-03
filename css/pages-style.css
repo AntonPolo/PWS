@@ -1,0 +1,74 @@
+.content-pages,
+.info-content {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.content-pages h1 {
+    color: #222222;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.content-pages p {
+    margin-bottom: 10px;
+}
+
+.content-pages .page-img img {
+    float: left;
+    max-width: 30%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.page-img {
+    display: grid;
+    grid-row-gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.t-info {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.t-info a {
+    color: #0075FF;
+}
+
+.t-info strong {
+    font-weight: 500;
+    color: #222222;
+}
+
+.t-info td {
+    padding: 5px 10px;
+}
+
+.t-info td:nth-child(even) {
+    color: #525764;
+}
+
+.t-info td:first-child {
+    width: 180px;
+}
+
+.t-info td:nth-child(2) {
+    width: 520px;
+}
+
+@media (max-width:389px) {
+    table.t-info tr {
+        display: flex;
+        flex-direction: column;
+    }
+    .t-info td:first-child {
+        width: 100%;
+    }
+    .t-info td:nth-child(2) {
+        width: 100%;
+    }
+}
