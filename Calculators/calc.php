@@ -1,5 +1,5 @@
 <?php
-include ('Prices.php');
+include('../php/DB.php');
 if (isset($_POST['index_1'])){
 $index_mn = filter_var(trim($_POST['index_1']), FILTER_SANITIZE_STRING);
 }else{
