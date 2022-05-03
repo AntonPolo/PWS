@@ -1,0 +1,171 @@
+.page {
+    overflow: hidden;
+    /*display: flex;
+    flex-direction: column;*/
+    display: grid;
+    grid-template-areas: "header" "content" "footer";
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.top {
+    height: 137px;
+    padding: 19px;
+}
+
+.arr {
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+
+.cl1 {
+    margin: 0ch;
+    letter-spacing: 0.25em;
+    line-height: 17px;
+}
+
+.cl3 {
+    line-height: 20px;
+    align-items: center;
+}
+
+.pcent {
+    margin: 0ch;
+    text-align: center;
+}
+.down {
+    font-size: 14px;
+}
+
+/* HEADER */
+.header1,
+.header3 {
+    padding: inherit;
+}
+
+.menu {
+    font-size: 20px;
+    line-height: 23px;
+
+    color: #7c7c7c;
+}
+
+.nav-item {
+    padding: 0 25px 0 25px;
+}
+
+hr {
+    color: #50a0ff;
+    margin: 0;
+    height: 1px;
+    opacity: 100;
+}
+
+.navbar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.kont {
+    padding: 16px;
+}
+
+@media (max-width: 768px) {
+    .header2 {
+        padding: 1% 5% 0 5%;
+    }
+    .logo {
+        padding: 0 5%;
+    }
+    .header3 {
+        text-align: center;
+        padding: 1% 0 0 0;
+    }
+    .kont {
+        padding: 0;
+    }
+    .arr {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+/* /HEADER */
+
+/* CONTENT */
+
+/* SLIDER */
+.slider{
+    padding: 0;
+    max-height: 800px;
+    margin-bottom: 25px;
+}
+.slider img {
+    padding: 0;
+    max-height: 800px;
+}
+.slider img {
+    filter: brightness(80%);
+}
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+/* /SLIDER */
+
+/* FORM */
+
+/* /FORM */
+/* /CONTENT */
+
+/* FOOTER */
+#footer {
+    height: 360px;
+}
+.footer {
+    color: #363636;
+    margin-top: 70px;
+}
+.thead {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 33px;
+
+    color: #ffffff;
+}
+.tbodyf {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    align-items: center;
+
+    color: #ffffff;
+}
+td {
+    border: none;
+}
+.container-xxl {
+    padding: 0;
+}
+
+.Order_Constructor {
+    width: 750px;
+    margin: auto;
+}
+@media (min-width: 768px) {
+    #footer-smart{
+        display: none;
+    }
+}
+/* /FOOTER */
