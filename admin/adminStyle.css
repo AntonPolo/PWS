@@ -1,20 +1,96 @@
 .container>div {
     position: relative;
     /* Чтобы .close не выходил за рамки .container */
-  }
-  
-  .close {
+}
+
+.close {
     position: absolute;
     right: 0;
     /* Ставим крестик справа */
-  }
-  
-  .close-image-icon {
+}
+
+.close-image-icon {
     display: none;
     /* Скрываем крестик по умолчанию */
-  }
-  
-  .container>div:hover .close-image-icon {
+}
+
+.container>div:hover .close-image-icon {
     display: block !important;
     /* При навидении на div в .container показать крестик */
-  }
+}
+
+.admin td {
+    padding-right: 20px;
+    padding-bottom: 5px;
+}
+
+.admin input[type="submit"] {
+    background: #fff;
+    border: 1px solid #50a0ff;
+    height: 40px;
+    color: #50a0ff;
+    padding: 5px 10px;
+}
+
+.admin button.edit,
+.edit_main_page,
+.edit_works_page,
+.add_page,
+.add_new_photo {
+    background: #fff;
+    border: 1px solid #50a0ff;
+    height: 40px;
+    color: #50a0ff;
+    padding: 5px 10px;
+}
+
+.admin .delete {
+    background: #fff;
+    border: 1px solid #ff0000;
+    height: 40px;
+    color: #ff0000;
+    padding: 5px 10px;
+}
+
+.admin .admin_exit {
+    background: #50a0ff;
+    border: 1px solid #50a0ff;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    width: 25%;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.close_edit_works_page {
+    background: #50a0ff;
+    border: 1px solid #50a0ff;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.container.admin {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.admin button.edit:hover,
+.edit_main_page:hover,
+.edit_works_page:hover,
+.add_page:hover,
+.delete:hover,
+.admin_exit:hover,
+input[type="submit"]:hover,
+.file:hover,
+.but:hover {
+    transform: scale(1.2);
+}
+
+.admin table {
+    width: 100%;
+    margin-bottom: 40px;
+}

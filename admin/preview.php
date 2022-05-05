@@ -8,7 +8,7 @@ $page_title_preview = $_POST['page_title_preview'];
 if(isset($_POST['file_url'])):
 $file_url = $_POST['file_url'];
 ?>
-<button id="back" onclick="window.history.back();">Назад</button>
+<button id="back" onclick="window.history.back();" style="background: #fff;border: 1px solid #50a0ff; background: #50a0ff; color: white; height: 40px;">Назад</button>
 <button id="saving_page" onclick="saving_page(`<? echo $page_title_preview; ?>`,`<? echo $page_content_preview; ?>`,`<? echo $file_url; ?>`)">Сохранить</button>
 
 
@@ -18,7 +18,7 @@ $file_url = $_POST['file_url'];
 elseif(isset($_POST['page_id_preview'])):
 
 ?>
-<button id="back" onclick="window.history.back();">Назад</button>
+<button id="back" onclick="window.history.back();" style="background: #fff;border: 1px solid #50a0ff; background: #50a0ff; color: white; height: 40px;">Назад</button>
 <?php 
 else: 
 
@@ -27,7 +27,7 @@ $menu_point_id = $_POST['menu_point_id'];
 ?>
 
 
-<button id="back" onclick="window.history.back();">Назад</button>
+<button id="back" onclick="window.history.back();" style="background: #fff;border: 1px solid #50a0ff; background: #50a0ff; color: white; height: 40px;">Назад</button>
 <button id="saving_page" onclick="add_new_page(<?php echo $menu_point_id; ?>,'<?php echo $page_title_preview; ?>',`<?php echo $page_content_preview; ?>`)">Добавить страницу</button>
 
 <?php endif; ?>

@@ -12,6 +12,14 @@
     margin-bottom: 20px;
 }
 
+.content-pages h2 {
+    font-weight: 500;
+}
+
+.content-pages .main-li::marker {
+    font-size: 32px;
+}
+
 .content-pages p {
     margin-bottom: 10px;
 }
@@ -26,7 +34,6 @@
 .page-img {
     display: grid;
     grid-row-gap: 10px;
-    justify-content: center;
     margin-bottom: 10px;
 }
 
