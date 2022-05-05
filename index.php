@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="./Calculators/calc_style.css">
   <link rel="stylesheet" href="./Constructor/cons_style.css">
   <link rel="stylesheet" href="./css/pages-style.css">
+  <link rel="stylesheet" href="./admin/adminStyle.css">
   <title>
 
     <?
@@ -190,15 +191,9 @@
                   </li>
                   <img src="img/Line.svg" class="d-none d-lg-block" alt="line">
                   <li class="nav-item dropdown">
-                    <a class="nav-link<?php if ($_GET['menu'] == "info") {
+                    <a class="nav-link<?php if ($_GET['page'] == "about_us") {
                                         echo " active";
-                                      } ?>" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">О нас</a>
-
-
-
-
-
-
+                                      } ?>" aria-current="page" href="./?page=about_us">О нас</a>
                   </li>
                   <img src="img/Line.svg" class="d-none d-lg-block" alt="line">
                   <li class="nav-item">
@@ -236,6 +231,8 @@
     require './constructor.php';
   } else if (isset($_GET['page']) && $_GET['page'] == 'my_works') {
     require './works.php';
+  } else if (isset($_GET['page']) && $_GET['page'] == 'about_us') {
+    require './about-us/aboutus.php';
   } else {
   ?>
     <script>
@@ -355,7 +352,7 @@
                 <a href="./?page=my_works&go=0&page_num=1">Наши работы</a>
               </p>
               <p>
-                <a href="#!">О нас</a>
+                <a href="./?page=about_us">О нас</a>
               </p>
               <p>
                 <a href="admin/auth/auth.php">Администратор</a>
