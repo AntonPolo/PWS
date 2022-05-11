@@ -81,7 +81,7 @@
     $count -= 9;
   }
   $page_num = $_GET['page_num'];
-
+  if ($page_count > 2) {
   ?>
 
   <nav aria-label="Page navigation" class="navigation">
@@ -97,7 +97,7 @@
 
 
       <?
-      if ($page_num <= 4) {
+      if ($page_num <= 4 || $page_count < 8) {
       ?>
         <li class="page-item"><a class="page-link<?php if ($page_num == 1) {
                                                     echo " active-num";
@@ -157,21 +157,22 @@
 
 
       <?
-      if ($page_num > ($page_count - 3)) {
+      if ($page_num > ($page_count - 4) || $page_count < 8) {
       ?>
         <li class="page-item"><a class="page-link<?php if ($page_num == $page_count) {
                                                     echo " active-num";
-                                                  } ?>" href="./?page=my_works&go=<? echo $count_1 - 9; ?>&page_num=<? echo $page_count; ?>"><? echo $page_count; ?></a></li>
+                                                  } ?>" href="./?page=my_works&go=<? echo $go; ?>&page_num=<? echo $page_count; ?>"><? echo $page_count; ?></a></li>
       <?
       } else {
       ?>
         <p>...</p>
         <li class="page-item"><a class="page-link<?php if ($page_num == $page_count) {
                                                     echo " active-num";
-                                                  } ?>" href="./?page=my_works&go=<? echo $count_1 - 9; ?>&page_num=<? echo $page_count; ?>"><? echo $page_count; ?></a></li>
+                                                  } ?>" href="./?page=my_works&go=<? echo $go; ?>&page_num=<? echo $page_count; ?>"><? echo $page_count; ?></a></li>
 
       <?
       }
+      
       ?>
 
 
@@ -182,7 +183,33 @@
           <a class="page-link" href="./?page=my_works&go=<? print($_GET['go'] + 9); ?>&page_num=<? echo $_GET['page_num'] + 1; ?>">Следующая</a>
         </li>
 
-      <? endif; ?>
+      <? endif; 
+      } else {
+        if ($_GET['go'] > 0) :
+          ?>
+              <a href="./?page=my_works&go=<? print($_GET['go'] - 9); ?>&page_num=<? echo $_GET['page_num'] - 1; ?>">&#10094;</a>
+          <?
+          endif;
+          $go = 0;
+          for ($i = 1; $i <= $page_count; $i++) {
+
+              echo "<li class='page-item'><a class='";
+              if ($page_num == $i) {
+                  echo " a-active";
+              }
+              echo "' href='./?page=my_works&go=$go&page_num=$i'>$i</a></li>";
+
+              $go += 15;
+          }
+          //Шаг вперёд
+          if (($_GET['go'] + 15) < $count_1) :
+          ?>
+              <a href="./?page=my_works&go=<? print($_GET['go'] + 9); ?>&page_num=<? echo $_GET['page_num'] + 1; ?>">&#10095;</a>
+      <?
+          endif;
+      }
+      ?>
+
 
 
     </ul>

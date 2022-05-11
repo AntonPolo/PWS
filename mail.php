@@ -1,7 +1,7 @@
 <?php
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
-require 'PHPMailer/Exception.php';
+require './libs/PHPMailer/PHPMailer.php';
+require './libs/PHPMailer/SMTP.php';
+require './libs/PHPMailer/Exception.php';
 
 
 if(isset($_POST['Profile'])){

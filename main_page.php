@@ -312,16 +312,16 @@
 
             <div class="row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="Имя*" name="measuring_form_name" aria-label="Имя">
+                <input type="text" class="form-control" placeholder="Имя*" name="measuring_form_name_1" aria-label="Имя">
               </div>
               <div class="col">
-                <input type="tel" class="form-control" placeholder="Телефон*" aria-label="Телефон" name="measuring_form_phone" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" required>
+                <input type="tel" class="form-control" placeholder="Телефон*" aria-label="Телефон" name="measuring_form_phone_1" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" required>
               </div>
             </div>
             <div class="row">
               <div class="col">Нажимая кнопку, вы соглашаетесь с условиями Политики конфиденциальности</div>
               <div class="col button">
-                <button type="submit" class="btn btn-primary" id="measuring"><img src="img/pen.svg" alt="Кнопка записаться на замер"> Записаться на замер</button>
+                <button type="submit" class="btn btn-primary" id="measuring_1"><img src="img/pen.svg" alt="Кнопка записаться на замер"> Записаться на замер</button>
               </div>
             </div>
           </div>

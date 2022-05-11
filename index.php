@@ -1,4 +1,4 @@
-<?php include('./php/DB.php'); ?>
+<?php include('./DB.php'); ?>
 
 
 
@@ -10,7 +10,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./libs/bootstrap.css">
   <link rel="stylesheet" href="./css/works.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./Calculators/calc_style.css">
@@ -22,11 +22,13 @@
     <?
     if (isset($_GET['menu'])) {
       $show_url = "./?page=" . $_GET['page'] . "&menu=" . $_GET['menu'];
+    } elseif (empty($_GET['page'])) {
+      $show_url = "./";
     } else {
       $show_url = "./?page=" . $_GET['page'];
     }
 
-    if ($show_url == "./?page=") {
+    if ($show_url == "./") {
       echo "Главная страница";
     } else {
       $titles = get_all_titles_by_menu_show_url($show_url);
@@ -41,7 +43,6 @@
 </head>
 
 <body>
-
   <div id="header" class="" style="background-color: #F4F4F4;">
     <!--Сетка Лого-->
 
@@ -220,27 +221,26 @@
 
   <?
   if (isset($_GET['page']) && $_GET['page'] == 'main_page') {
+
     require './main_page.php';
   } else if (isset($_GET['menu']) && $_GET['menu'] == 'services') {
+
     require "./menu_page/services/" . $_GET['page'] . ".php";
   } else if (isset($_GET['menu']) && $_GET['menu'] == 'prices') {
+
     require "./menu_page/prices/" . $_GET['page'] . ".php";
-  } else if (isset($_GET['menu']) && $_GET['menu'] == 'info') {
-    require "./menu_page/info/" . $_GET['page'] . ".php";
   } else if (isset($_GET['page']) && $_GET['page'] == 'constructor') {
+
     require './constructor.php';
   } else if (isset($_GET['page']) && $_GET['page'] == 'my_works') {
+
     require './works.php';
   } else if (isset($_GET['page']) && $_GET['page'] == 'about_us') {
+
     require './about-us/aboutus.php';
   } else {
-  ?>
-    <script>
-      url = "./?page=main_page";
-      setTimeout('location.href=url', 100);
-      this.href = 'javascript:void(0)';
-    </script>
-  <?
+
+    require './main_page.php';
   }
   ?>
 
@@ -250,52 +250,6 @@
     <hr>
     <nav class="navbar navbar-dark" style="background-color: #363636;">
       <div class="container-xxl">
-
-        <!--<table class="table footer">
-          <thead>
-            <tr>
-              <th class="thead">Контакты</th>
-              <th class="thead">Услуги</th>
-              <th class="thead">Цены</th>
-              <th class="thead">Прочее</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="tbodyf">
-              <td><img src="img/tel.svg" alt=""> +7 (123) 456-78-90</td>
-              <td><a href="#">Москитные сетки</a></td>
-              <td><a href="#">Цены на пластиковые окна</a></td>
-              <td><a href="#">Конструктор заказа</a></td>
-            </tr>
-            <tr class="tbodyf">
-              <td><img src="img/mail.svg" alt=""> paiXXXXXXX@XXX.ru</td>
-              <td><a href="#">Пластиковые окна</a></td>
-              <td><a href="#">Цены на остекление балконов</a></td>
-              <td><a href="#">Наши работы</a></td>
-            </tr>
-            <tr class="tbodyf">
-              <td><img src="img/whatsapp.svg" alt=""> WhatsApp +7 (123) 456-78-90</td>
-              <td><a href="#">Остекление балконов</a></td>
-              <td><a href="#">Цены на регулеровку и ремонт</a></td>
-              <td><a href="#">О нас</a></td>
-
-            </tr>
-            <tr class="tbodyf">
-              <td></td>
-              <td><a href="#">Регулеровка и ремонт окон пвх</a></td>
-              <td><a href="#">Калькулятор москитных сеток</a></td>
-              <td><a href="admin/auth/auth.php">Администратор</a></td>
-              <td></td>
-            </tr>
-            <tr class="tbodyf">
-              <td></td>
-              <td><a href="#">Замена стеклопакетов</a></td>
-              <td><a href="#">Калькулятор стеклопакетов</a></td>
-
-              <td></td>
-            </tr>
-          </tbody>
-        </table>-->
 
 
         <section class="foott">
@@ -378,8 +332,8 @@
     </nav>
   </div>
 
-  <script src="js/bootstrap.bundle.js"></script>
-  <script src="./js/jQuery.js"></script>
+  <script src="./libs/bootstrap.bundle.js"></script>
+  <script src="./libs/jQuery.js"></script>
   <script src="./js/functions.js"></script>
   <script src="./Calculators/get.js"></script>
   <script src="./Constructor/Constructor_func.js"></script>
