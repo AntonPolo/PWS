@@ -1,4 +1,4 @@
-<?php include('../php/DB.php'); ?>
+<?php include('../DB.php'); ?>
 <?php
 
 //Удаление файла

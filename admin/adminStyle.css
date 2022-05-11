@@ -94,3 +94,11 @@ input[type="submit"]:hover,
     width: 100%;
     margin-bottom: 40px;
 }
+
+#saving_page {
+    background: #fff;
+    border: 1px solid #50a0ff;
+    /* background: #50a0ff; */
+    color: #50a0ff;
+    height: 40px;
+}

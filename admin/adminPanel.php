@@ -1,5 +1,5 @@
 <?
-include('../php/DB.php');
+include('../DB.php');
 session_start();
 if (isset($_SESSION['admin'])) :
 ?>
@@ -21,7 +21,7 @@ if (isset($_SESSION['admin'])) :
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin-панель</title>
-        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../libs/bootstrap.css">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="./adminStyle.css">
     </head>
@@ -245,8 +245,8 @@ if (isset($_SESSION['admin'])) :
 
             <!-- ----------------------------- -->
 
-            <script src="../js/jQuery.js"></script>
-            <script src="../js/bootstrap.bundle.js"></script>
+            <script src="../libs/jQuery.js"></script>
+            <script src="../libs/bootstrap.bundle.js"></script>
             <script src="./admin_fun.js"></script>
 
             <!-- Скрипт который делает адаптацию textarea под содержимое -->
