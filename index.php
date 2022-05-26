@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="./Constructor/cons_style.css">
   <link rel="stylesheet" href="./css/pages-style.css">
   <link rel="stylesheet" href="./admin/adminStyle.css">
+  
+  <link rel="shortcut icon" href="./img/favicon/pws.ico">
   <title>
 
     <?

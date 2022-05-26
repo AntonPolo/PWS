@@ -495,3 +495,10 @@
     .active_page {
         background-color: #a09c9c;
     }
+    
+    .pagination {
+        display: flex;
+        padding-left: 0;
+        list-style: none;
+        flex-wrap: wrap;
+    }

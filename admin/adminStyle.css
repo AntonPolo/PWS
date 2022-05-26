@@ -30,6 +30,24 @@
     height: 40px;
     color: #50a0ff;
     padding: 5px 10px;
+    width: 166px;
+    border-radius: 0.25rem;
+    margin: auto;
+}
+
+.nav-btn {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.admin_exit {
+    background-color: #50a0ff;
+    padding: 5px 10px;
+    color: #fff;
+    border: #50a0ff;
+    height: 40px;
 }
 
 .admin button.edit,
@@ -101,4 +119,107 @@ input[type="submit"]:hover,
     /* background: #50a0ff; */
     color: #50a0ff;
     height: 40px;
+}
+
+.ModalAdd,
+.Modal {
+    border: none;
+    padding: 25px;
+}
+
+.Modal[open],
+.ModalAdd[open] {
+    animation: zoom 0.5s linear;
+}
+
+.Modal[close],
+.ModalAdd[close] {
+    animation: zoom 0.5s linear;
+}
+
+.ModalAdd::backdrop,
+.Modal::backdrop {
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+.closeModal,
+.closeModalAdd {
+    background: #fff;
+    border: 1px solid #50a0ff;
+    height: 40px;
+    color: #50a0ff;
+    padding: 5px 10px;
+    width: 166px;
+}
+
+.Modal-inner .closeModal:hover,
+.Modal-inner .closeModalAdd:hover {
+    transform: skew(1.2);
+    color: #50a0ff;
+}
+
+.btn-check:focus+.btn,
+.btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+.admin .navigation {
+    margin-top: 20px;
+}
+
+.admin .col {
+    width: 20%;
+}
+
+.admin .w-image {
+    height: 222px;
+}
+
+.inner_form_works .file:hover {
+    transform: scale(1);
+}
+
+.admin .card .close-image-icon {
+    display: block;
+}
+
+@media (max-width: 991px) {
+    .admin .col {
+        width: 33.333%;
+    }
+}
+
+@media (max-width: 570px) {
+    .admin .col {
+        width: 100%;
+    }
+    .admin .w-image {
+        height: 425px;
+    }
+}
+
+#slide-img,
+#works-img {
+    position: relative;
+    cursor: pointer;
+}
+
+#slide-img[type="file"],
+#works-img[type="file"] {
+    padding: 0;
+}
+
+#slide-img[type="file"]::-webkit-file-upload-button,
+#works-img[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+    margin-left: 10px;
+    padding: 0;
+    height: 50px;
+    width: 0;
+}
+.active-num {
+    background-color: #cfcfcf;
+    color: white;
 }

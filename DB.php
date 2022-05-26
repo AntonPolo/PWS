@@ -74,6 +74,12 @@ function edit_page_title_on_DB($page_title,$file_url){
 function add_new_slide_url_on_DB($slide_url){
     global $mysql;
     $mysql -> query("INSERT INTO `slider` (`id`, `slider_img_url`) VALUES (NULL, '$slide_url')");
+    $result = $mysql -> query("SELECT count(*) FROM `slider` WHERE `slider_img_url` = '$slide_url'");
+    if (is_array($result) || is_object($result)){
+        foreach ($result as $result) {
+            return $result[0];
+        }
+    }
 }
 //Получение ссылок на изображения для слайдера из БД
 function get_all_slide_url($limit){
@@ -85,15 +91,36 @@ function get_all_slide_url($limit){
     }
     return $slide_urls;
 }
-//Удаление слайда из БД по ссылке
-function delete_slide($file_url){
+//Получение кол-ва изображений для слайдера
+function get_count_all_slide_url(){
+    global $mysql;
+    $result = $mysql -> query("SELECT count(*) FROM `slider`");
+    if (is_array($result) || is_object($result)){
+        foreach ($result as $result) {
+            return $result[0];
+        }
+    }
+}
+//Удаление слайда из БД
+function delete_slide_db($file_url){
     global $mysql;
     $mysql -> query("DELETE FROM `slider` WHERE `slider_img_url` = '$file_url'");
+}
+//Удаление work из БД
+function delete_work($file_url){
+    global $mysql;
+    $mysql -> query("DELETE FROM `my_works` WHERE `photo_url` = '$file_url'");
 }
 //Добавления фото для Наши работы в БД
 function add_new_photo($photo_url,$photo_title){
     global $mysql;
     $mysql -> query("INSERT INTO `my_works` (`id`, `photo_url`, `photo_title`) VALUES (NULL, '$photo_url', '$photo_title')");
+    $result = $mysql -> query("SELECT count(*) FROM `my_works` WHERE `photo_title` = '$photo_title'");
+    if (is_array($result) || is_object($result)){
+        foreach ($result as $result) {
+            return $result[0];
+        }
+    }
 }
 //Получение фото для Наши работы из БД
 function get_all_photo($limit){

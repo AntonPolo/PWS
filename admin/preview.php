@@ -45,14 +45,8 @@ else :
   <link rel="stylesheet" href="./adminStyle.css">
   <title>
 
-    <?
-
-    echo $page_title_preview;
-
-    ?>
-
-
-
+    <? echo $page_title_preview; ?>
+    
   </title>
 
 </head>
@@ -319,12 +313,12 @@ else :
     </nav>
   </div>
 
-  <script src="../js/bootstrap.bundle.js"></script>
-  <script src="../js/jQuery.js"></script>
-  <script src="./admin_fun.js"></script>
+  <script src="../libs/bootstrap.bundle.js"></script>
+  <script src="../libs/jQuery.js"></script>
   <script src="../js/functions.js"></script>
   <script src="../Calculators/get.js"></script>
   <script src="../Constructor/Constructor_func.js"></script>
+  <script src="./admin_fun.js"></script>
 </body>
 
 </html>
