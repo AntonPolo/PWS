@@ -32,6 +32,7 @@
         <hr>
 
         <button id="mn_calc">Рассчитать</button>
+        <span id="mn_calc2" class="loading_class" style="margin: auto;"></span>
 
         <div class="result" style="display:inline-block">
             <div class="sum">Сумма:</div>

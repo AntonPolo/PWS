@@ -1,4 +1,9 @@
 <?php
+/*$dbhost = "localhost";
+$dbname = "cl37681_pws";
+$username = "cl37681_pws";
+$password = "Alex2106200100";*/
+
 $dbhost = "192.168.0.148";
 $dbname = "pws_db";
 $username = "admin";

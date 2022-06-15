@@ -11,7 +11,7 @@ function can_upload_slide($file)
 
     $getMime = explode('.', $file['name']);
     $mime = strtolower(end($getMime));
-    $types = array('jpg', 'png', 'jpeg');
+    $types = array('webp');
 
     if (!in_array($mime, $types))
         return 'Недопустимый тип файла.';

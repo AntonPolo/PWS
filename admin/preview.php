@@ -1,5 +1,18 @@
-<?php include('../DB.php');
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../libs/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages-style.css">
+  <link rel="stylesheet" href="./adminStyle.css">
+</head>
+
+<?php include('../DB.php');
 
 $page_content_preview = $_POST['page_content_preview'];
 $page_content_preview = str_replace('"', "'", $page_content_preview);
@@ -31,24 +44,11 @@ else :
   <button id="saving_page" onclick="add_new_page(<?php echo $menu_point_id; ?>,'<?php echo $page_title_preview; ?>',`<?php echo $page_content_preview; ?>`)">Добавить страницу</button>
 
 <?php endif; ?>
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="../libs/bootstrap.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/pages-style.css">
-  <link rel="stylesheet" href="./adminStyle.css">
   <title>
-
     <? echo $page_title_preview; ?>
-    
   </title>
-
 </head>
 
 <body>

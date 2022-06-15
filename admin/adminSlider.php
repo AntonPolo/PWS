@@ -1,13 +1,13 @@
 <!-- Формы редактирования главной страницы -->
 <form id="form_slider_img" enctype="multipart/form-data" method="post" style="margin-bottom: 20px;">
-    <p>Загрузка нового изображения для слайдера</p>
+    <p>Загрузка нового изображения для слайдера (.webp)</p>
 
     <div style="display: flex;align-content: center;align-items: center; gap:10px;">
         <span style="background: #50a0ff; padding: 5px 10px; height: 40px; color: #fff; display: flex; align-items: center; cursor: pointer; max-width: 197px;">
             <img src="/img/download.png" alt="Выберите файл" style="height: 30px;">
             <!--<label for="slide-img" style="cursor: pointer;">Выберите файл</label>-->
 
-            <input type="file" name="slider_img" id="slide-img" accept="image/jpeg,image/png">
+            <input type="file" name="slider_img" id="slide-img" accept="image/webp">
         </span>
         <!--<label for="slide-img" class="file" style="background: #50a0ff; border: 1px solid #50a0ff;height: 40px;color: #ffffff;padding: 5px 10px;display: flex;align-items: center; gap: 10px;cursor: pointer;" title="Выбрать изображение"><img src="/img/download.png" title="Выбрать изображение" width="24px" height="24px">
             Выберите файл

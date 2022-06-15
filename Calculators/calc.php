@@ -1,13 +1,13 @@
 <?php
-include('../php/DB.php');
+include('../DB.php');
 if (isset($_POST['index_1'])){
-$index_mn = filter_var(trim($_POST['index_1']), FILTER_SANITIZE_STRING);
+$index_mn = trim($_POST['index_1']);
 }else{
     $index_mn = 0;
 }
 
 if (isset($_POST['index_2'])){
-    $index_dgw = filter_var(trim($_POST['index_2']), FILTER_SANITIZE_STRING);
+    $index_dgw = trim($_POST['index_2']);
     }else{
     $index_dgw = 0;
 }
@@ -15,13 +15,13 @@ if (isset($_POST['index_2'])){
 
 if ($index_mn == 1){
 
-    $Height_mn = filter_var(trim($_POST['Height_mn']), FILTER_SANITIZE_STRING); //Высота москитной сетки
+    $Height_mn = trim($_POST['Height_mn']); //Высота москитной сетки
 
-    $Width_mn = filter_var(trim($_POST['Width_mn']), FILTER_SANITIZE_STRING); //Ширина москитной сетки
+    $Width_mn = trim($_POST['Width_mn']); //Ширина москитной сетки
 
-    $type_mn = filter_var(trim($_POST['type_mn']), FILTER_SANITIZE_STRING); //
+    $type_mn = trim($_POST['type_mn']); //
 
-    $checkbox_mn = filter_var(trim($_POST['checkbox_mn']), FILTER_SANITIZE_STRING);
+    $checkbox_mn = trim($_POST['checkbox_mn']);
 
 $Square_mn = ($Height_mn / 100) * ($Width_mn / 100);
 
@@ -42,15 +42,15 @@ $index_mn = 0;
 
 if ($index_dgw == 1){
 
-    $Height_dgw = filter_var(trim($_POST['Height_dgw']), FILTER_SANITIZE_STRING); //Высота москитной сетки
+    $Height_dgw = trim($_POST['Height_dgw']); //Высота москитной сетки
 
-    $Width_dgw = filter_var(trim($_POST['Width_dgw']), FILTER_SANITIZE_STRING); //Ширина москитной сетки
+    $Width_dgw = trim($_POST['Width_dgw']); //Ширина москитной сетки
 
-    $type_dgw = filter_var(trim($_POST['type_dgw']), FILTER_SANITIZE_STRING); //
+    $type_dgw = trim($_POST['type_dgw']); //
 
-    $checkbox_1_dgw = filter_var(trim($_POST['checkbox_1_dgw']), FILTER_SANITIZE_STRING);
+    $checkbox_1_dgw = trim($_POST['checkbox_1_dgw']);
 
-    $checkbox_2_dgw = filter_var(trim($_POST['checkbox_2_dgw']), FILTER_SANITIZE_STRING);
+    $checkbox_2_dgw = trim($_POST['checkbox_2_dgw']);
 
 $Square_dgw = ($Height_dgw / 100) * ($Width_dgw / 100);
 

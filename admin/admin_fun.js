@@ -121,7 +121,7 @@ function saving_page(page_title, page_content, file_url) {
 
 
                     if (data == "Вы заполнили не все поля! Попробуйте снова") {
-                        url = `./adminPanel.php?file_url=${file_url}&Page_title=${page_title_saving}`;
+                        url = `./adminPanel.php`;
                         setTimeout('location.href=url', 100);
                         this.href = 'javascript:void(0)';
                     } else {

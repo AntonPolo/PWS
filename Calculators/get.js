@@ -1,10 +1,3 @@
-function deleteItems_mn(id) {
-    var deleteElement = document.getElementById(`${id}`);
-    for (let i = 0; i < deleteElement.length; i++) {
-        deleteElement[i].remove();
-    }
-}
-
 $("#mn_calc").on("click", function mn_data() {
 
     var index_calc_mn = 1;
@@ -44,7 +37,8 @@ $("#mn_calc").on("click", function mn_data() {
         },
         beforeSend: function() {
             $("#mn_calc").prop("disabled", true);
-            $("#mn_calc").css("background-color", "gray");
+            $("#mn_calc").css("display", "none");
+            $("#mn_calc2").css("display", "initial");
         },
         success: function(data) {
             if (!data) {
@@ -53,7 +47,8 @@ $("#mn_calc").on("click", function mn_data() {
                 $("#sum_mn").html(data, '\n');
             }
             $("#mn_calc").prop("disabled", false);
-            $("#mn_calc").css("background-color", "#0075FF");
+            $("#mn_calc").css("display", "initial");
+            $("#mn_calc2").css("display", "none");
         }
     })
 
@@ -104,7 +99,8 @@ $("#dgw_calc").on("click", function dgw_data() {
         },
         beforeSend: function() {
             $("#dgw_calc").prop("disabled", true);
-            $("#dgw_calc").css("background-color", "gray");
+            $("#dgw_calc").css("display", "none");
+            $("#dgw_calc2").css("display", "initial");
         },
         success: function(data) {
             if (!data) {
@@ -113,7 +109,8 @@ $("#dgw_calc").on("click", function dgw_data() {
                 $("#sum_dgw").html(data, '\n');
             }
             $("#dgw_calc").prop("disabled", false);
-            $("#dgw_calc").css("background-color", "#50a0ff");
+            $("#dgw_calc").css("display", "initial");
+            $("#dgw_calc2").css("display", "none");
         }
     })
     index_calc_dgw = 0;

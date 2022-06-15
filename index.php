@@ -7,9 +7,24 @@
 <html lang="en">
 
 <head>
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(89105102, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/89105102" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <link rel="stylesheet" href="./libs/bootstrap.css">
   <link rel="stylesheet" href="./css/works.css">
   <link rel="stylesheet" href="./css/style.css">
@@ -17,8 +32,8 @@
   <link rel="stylesheet" href="./Constructor/cons_style.css">
   <link rel="stylesheet" href="./css/pages-style.css">
   <link rel="stylesheet" href="./admin/adminStyle.css">
-  
-  <link rel="shortcut icon" href="./img/favicon/pws.ico">
+
+  <link rel="icon" href="./img/favicon/pws.ico" type="image/x-icon">
   <title>
 
     <?
@@ -31,7 +46,7 @@
     }
 
     if ($show_url == "./") {
-      echo "Главная страница";
+      echo "Главная страница - Профессиональные оконные решения";
     } else {
       $titles = get_all_titles_by_menu_show_url($show_url);
       foreach ($titles as $title) {
@@ -56,7 +71,7 @@
               <a href="#"><img src="/img/LOGO/logo.png" class="img" alt="Logo"></a>
             </div>
           </div>
-          <div class="col-sm rehau-logo">
+          <div class="col-sm-2 rehau-logo">
             <a href="#"><img src="img/LOGO/reh-shapka.png" class="img" alt="RehauLogo"></a>
           </div>
           <div class="col-sm shapka-item d-none d-xl-block">
@@ -66,14 +81,12 @@
           </div>
           <div class="col-sm shapka-item">
             <div class="buttom-shapka">
-              <span>Оставте заявку на бесплатный ↓замер↓</span>
-              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Modal" style="background-color: #0075FF; border:none;">Заказать БЕСПЛАТНЫЙ замер</button>
-              <span>Вам перезвонят в течении часа.</span>
+              <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#Modal">Заказать БЕСПЛАТНЫЙ замер</button>
             </div>
             <!-- Modal -->
             <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-xl">
-                <div class="modal-content" style="background: url(img/form-bg-modal.jpg); background-size: cover; background-position-y: center;">
+                <div class="modal-content" style="background: url(img/form-bg-modal.webp); background-size: cover; background-position-y: center;">
                   <div class="modal-header" style="border-bottom: 0;">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
@@ -86,14 +99,15 @@
 
                           <div class="row">
                             <div class="col">
-                              <input type="text" class="form-control" placeholder="Имя*" name="measuring_form_name" aria-label="Имя">
+                              <input type="text" class="form-control" placeholder="Имя*" name="measuring_form_name" aria-label="Имя" required>
                             </div>
                             <div class="col">
-                              <input type="tel" class="form-control" placeholder="Телефон*" aria-label="Телефон" name="measuring_form_phone" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" required>
+                              <input type="tel" class="form-control" placeholder="Телефон*" aria-label="Телефон" name="measuring_form_phone" pattern="/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/" required>
+                              <label id="measuring_form_phone_err" style="color: red; font-size: 11px;"></label>
                             </div>
                           </div>
                           <div class="row">
-                            <div class="col-9">Нажимая кнопку, вы соглашаетесь с условиями Политики конфиденциальности</div>
+                            <div class="col-9">Нажимая кнопку, вы соглашаетесь на обработку персональных данных и <a href="./?page=rules" style="color: #50a0ff;">с политикой конфиденциальности</a></div>
                           </div>
                         </div>
                       </div>
@@ -109,12 +123,12 @@
             <!-- /Modal -->
 
           </div>
-          <div class="col-sm shapka-item">
+          <div class="col-sm-2 shapka-item" style="width: 14.666667%;">
             <div class="contacts">
-              <ul class="list-unstyled">
-                <li class="cl3"><img src="img/tel.svg" alt="telefone"> +7 (123) 456-78-90 </li>
-                <li class="cl3"><img src="img/mail.svg" alt="mail"> paiXXXXX@XXX.ru</li>
-                <li class="cl3"><img src="img/whatsapp.svg" alt="whatsapp"> +7 (123) 456-78-90</li>
+              <ul class="list-unstyled" style="margin: 0;">
+                <li class="cl3"><img src="img/tel.svg" alt="telefone"> <a href='tel:+71234567890' style="color:black;">+7 (123) 456-78-90</a></li>
+                <li class="cl3"><img src="img/mail.svg" alt="mail"> <a href='mailto:pws.orders@yandex.ru' style="color:black;">pws.orders@yandex.ru</a></li>
+                <li class="cl3"><img src="img/whatsapp.svg" alt="whatsapp"> <a href='tel:+71234567890' style="color:black;">+7 (123) 456-78-90</a></li>
               </ul>
             </div>
           </div>
@@ -131,7 +145,7 @@
         <hr>
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
           <div class="container-xxl">
-            <a class="navbar-brand d-lg-none" href="#" style="padding: 0 10px;">
+            <a class="navbar-brand d-lg-none" href='tel:+71234567890' style="color:black;padding: 0 10px;">
               <p class="cl3"><img src="img/whatsapp.svg" alt="whatsapp"> +7 (123) 456-78-90</p>
             </a>
 
@@ -240,6 +254,9 @@
   } else if (isset($_GET['page']) && $_GET['page'] == 'about_us') {
 
     require './about-us/aboutus.php';
+  } else if (isset($_GET['page']) && $_GET['page'] == 'rules') {
+
+    require './rules.php';
   } else {
 
     require './main_page.php';
@@ -262,13 +279,13 @@
                 Контакты
               </h2>
               <p>
-                <img src="img/tel.svg" alt=""> +7 (123) 456-78-90
+                <img src="img/tel.svg" alt=""> <a href='tel:+71234567890'>+7 (123) 456-78-90</a>
               </p>
               <p>
-                <img src="img/mail.svg" alt=""> paiXXXXXXX@XXX.ru
+                <img src="img/mail.svg" alt=""> <a href='mailto:pws.orders@yandex.ru'>pws.orders@yandex.ru</a>
               </p>
               <p>
-                <img src="img/whatsapp.svg" alt=""> WhatsApp +7 (123) 456-78-90
+                <img src="img/whatsapp.svg" alt=""> <a href='tel:+71234567890'>WhatsApp +7 (123) 456-78-90</a>
               </p>
             </div>
             <div class="col">
@@ -323,12 +340,7 @@
   <div id="footer-smart" class="container-fluid" style="background-color: #363636;">
     <nav class="foot">
       <footer class="py-3">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item"><a href="#" class="nav-link px-2" style="color: #ffffff;">Контакты</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2" style="color: #ffffff;">Услуги</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2" style="color: #ffffff;">Цены</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2" style="color: #ffffff;">Прочее</a></li>
-        </ul>
+        
         <p class="text-center" style="color: #ffffff;">&copy; 2022 Пофессиональные Оконные Решения</p>
       </footer>
     </nav>

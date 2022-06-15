@@ -4,7 +4,6 @@ require('../../DB.php');
 
 $login = $_POST['login'];
 $password = md5($_POST['password']);
-echo $login.$password;
 
 $result = get_admin_data($login,$password);
 

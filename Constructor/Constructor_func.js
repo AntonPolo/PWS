@@ -4,7 +4,7 @@ var type_win_Value = "win1";
 //Функция для получения типа констркции
 function radio_data() {
     type_win_Value = $('input[name="type__img"]:checked').val();
-    if(type_win_Value == "BB5" || type_win_Value == "BB6" || type_win_Value == "BB7"){
+    if (type_win_Value == "BB5" || type_win_Value == "BB6" || type_win_Value == "BB7") {
 
         $('#hiegth_win').removeClass("sizer-left");
         $('#hiegth_win').addClass("sizer-right-mirror");
@@ -19,13 +19,13 @@ function radio_data() {
         $('#hiegth_door').removeClass("sizer-right");
         $('#hiegth_door').addClass("sizer-left-mirror");
 
-    }else if(type_win_Value == "BB8"){
+    } else if (type_win_Value == "BB8") {
 
         $('#width_door').removeClass("sizer-bottom-door");
         $('#width_door').removeClass("sizer-bottom-door-mirror");
         $('#width_door').addClass("sizer-bottom-door-chebu");
 
-    }else{
+    } else {
 
         $('#hiegth_win').removeClass("sizer-right-mirror");
         $('#hiegth_win').addClass("sizer-left");
@@ -45,14 +45,14 @@ function radio_data() {
 
 //Массивы ссылок на изображения для функций замены изображений
 var imgs_changed_win = [
-    "https://i.yapx.cc/RyIMU.png",
-    "https://i.yapx.cc/RyIMX.png",
-    "https://i.yapx.cc/RyIMZ.png",
-    "https://i.yapx.cc/RyIMV.png",
-    "https://i.yapx.cc/RyIMW.png",
+    "img/changed_win/Wondow.webp",
+    "img/changed_win/Wondow-3.webp",
+    "img/changed_win/Wondow-4.webp",
+    "img/changed_win/Wondow-1.webp",
+    "img/changed_win/Wondow-2.webp",
 ];
 
-var imgs_changed_door = ["https://i.yapx.cc/RyIMR.png", "https://i.yapx.cc/RyIMT.png"];
+var imgs_changed_door = ["img/changed_win/Door.webp", "img/changed_win/Door-1.webp"];
 
 //Счётчики исполнения функций замены изображений для перебора массивов
 var count_1;
@@ -117,10 +117,11 @@ $("#back_1").on("click", function() {
 
 $("#next").on("click", function(e) {
     e.preventDefault();
+
     $(".Step_2").css("display", "flex")
     $(".Step_1").css("display", "none")
-    var constructor_img_win = "https://i.yapx.cc/RyIMU.png"; //Глухое окно
-    var constructor_img_door = "https://i.yapx.cc/RyIMR.png"; //Дверь
+    var constructor_img_win = "./img/changed_win/Wondow.webp"; //Глухое окно
+    var constructor_img_door = "./img/changed_win/Door.webp"; //Дверь
 
     var img = "";
     var input = "";
@@ -136,11 +137,21 @@ $("#next").on("click", function(e) {
         count_3 = 1;
         count_4 = 1;
         count_door = 1;
+
+        $('#width_const input').attr("value", "2200");
+        $('#hiegth_win input').attr("value", "1500");
+        $('#width_win input').attr("value", "750");
+        $('#width_door input').attr("value", "700");
+        $('#hiegth_door input').attr("value", "2200");
+
         document.getElementById("width_win").style.display = "none";
+        $('#width_win input').attr("value", "0");
         document.getElementById("width_const").style.display = "flex";
         document.getElementById("hiegth_win").style.display = "flex";
         document.getElementById("width_door").style.display = "none";
+        $('#width_door input').attr("value", "0");
         document.getElementById("hiegth_door").style.display = "none";
+        $('#hiegth_door input').attr("value", "0");
     } else if (type_win_Value == "win2") {
         for (i = 0; i < 2; i++) {
             img += `<img src=\"${constructor_img_win}\" onclick=\"changeIMG_win(${i})\" id=\"${i}\" alt=\"\">`;
@@ -150,11 +161,21 @@ $("#next").on("click", function(e) {
         count_3 = 1;
         count_4 = 1;
         count_door = 1;
+
+        $('#width_const input').attr("value", "2200");
+        $('#hiegth_win input').attr("value", "1500");
+        $('#width_win input').attr("value", "750");
+        $('#width_door input').attr("value", "700");
+        $('#hiegth_door input').attr("value", "2200");
+
         document.getElementById("width_win").style.display = "none";
+        $('#width_win input').attr("value", "0");
         document.getElementById("width_const").style.display = "flex";
         document.getElementById("hiegth_win").style.display = "flex";
         document.getElementById("width_door").style.display = "none";
+        $('#width_door input').attr("value", "0");
         document.getElementById("hiegth_door").style.display = "none";
+        $('#hiegth_door input').attr("value", "0");
     } else if (type_win_Value == "win3") {
         for (i = 0; i < 3; i++) {
             img += `<img src=\"${constructor_img_win}\" onclick=\"changeIMG_win(${i})\" id=\"${i}\" alt=\"\">`;
@@ -164,11 +185,21 @@ $("#next").on("click", function(e) {
         count_3 = 1;
         count_4 = 1;
         count_door = 1;
+
+        $('#width_const input').attr("value", "2200");
+        $('#hiegth_win input').attr("value", "1500");
+        $('#width_win input').attr("value", "750");
+        $('#width_door input').attr("value", "700");
+        $('#hiegth_door input').attr("value", "2200");
+
         document.getElementById("width_win").style.display = "none";
+        $('#width_win input').attr("value", "0");
         document.getElementById("width_const").style.display = "flex";
         document.getElementById("hiegth_win").style.display = "flex";
         document.getElementById("width_door").style.display = "none";
+        $('#width_door input').attr("value", "0");
         document.getElementById("hiegth_door").style.display = "none";
+        $('#hiegth_door input').attr("value", "0");
     } else if (type_win_Value == "win4") {
         for (i = 0; i < 4; i++) {
             img += `<img src=\"${constructor_img_win}\" onclick=\"changeIMG_win(${i})\" id=\"${i}\" alt=\"\">`;
@@ -178,11 +209,21 @@ $("#next").on("click", function(e) {
         count_3 = 1;
         count_4 = 1;
         count_door = 1;
+
+        $('#width_const input').attr("value", "2200");
+        $('#hiegth_win input').attr("value", "1500");
+        $('#width_win input').attr("value", "750");
+        $('#width_door input').attr("value", "700");
+        $('#hiegth_door input').attr("value", "2200");
+
         document.getElementById("width_win").style.display = "none";
+        $('#width_win input').attr("value", "0");
         document.getElementById("width_const").style.display = "flex";
         document.getElementById("hiegth_win").style.display = "flex";
         document.getElementById("width_door").style.display = "none";
+        $('#width_door input').attr("value", "0");
         document.getElementById("hiegth_door").style.display = "none";
+        $('#hiegth_door input').attr("value", "0");
     } else if (type_win_Value == "BB1") {
         for (i = 0; i < 1; i++) {
             img += `<img src=\"${constructor_img_door}\" onclick=\"changeIMG_door(${i})\" id=\"${i}\"  alt=\"\">`;
@@ -192,9 +233,19 @@ $("#next").on("click", function(e) {
         count_3 = 1;
         count_4 = 1;
         count_door = 1;
+
+        $('#width_const input').attr("value", "2200");
+        $('#hiegth_win input').attr("value", "1500");
+        $('#width_win input').attr("value", "750");
+        $('#width_door input').attr("value", "700");
+        $('#hiegth_door input').attr("value", "2200");
+
         document.getElementById("width_win").style.display = "none";
+        $('#width_win input').attr("value", "0");
         document.getElementById("width_const").style.display = "none";
+        $('#width_const input').attr("value", "0");
         document.getElementById("hiegth_win").style.display = "none";
+        $('#hiegth_win input').attr("value", "0");
         document.getElementById("width_door").style.display = "flex";
         document.getElementById("hiegth_door").style.display = "flex";
     } else if (type_win_Value == "BB2") {
@@ -203,13 +254,20 @@ $("#next").on("click", function(e) {
         }
         for (j = 0; j < 1; j++) {
             img += `<img src=\"${constructor_img_door}\" onclick=\"changeIMG_door(${i + j
-        })\" id=\"${i + j}\"  alt=\"\">`;
+                })\" id=\"${i + j}\"  alt=\"\">`;
         }
         count_1 = 1;
         count_2 = 1;
         count_3 = 1;
         count_4 = 1;
         count_door = 1;
+
+        $('#width_const input').attr("value", "2200");
+        $('#hiegth_win input').attr("value", "1500");
+        $('#width_win input').attr("value", "750");
+        $('#width_door input').attr("value", "700");
+        $('#hiegth_door input').attr("value", "2200");
+
         document.getElementById("width_win").style.display = "flex";
         document.getElementById("width_const").style.display = "flex";
         document.getElementById("hiegth_win").style.display = "flex";
@@ -221,13 +279,20 @@ $("#next").on("click", function(e) {
         }
         for (j = 0; j < 1; j++) {
             img += `<img src=\"${constructor_img_door}\" onclick=\"changeIMG_door(${i + j
-        })\" id=\"${i + j}\"  alt=\"\">`;
+                })\" id=\"${i + j}\"  alt=\"\">`;
         }
         count_1 = 1;
         count_2 = 1;
         count_3 = 1;
         count_4 = 1;
         count_door = 1;
+
+        $('#width_const input').attr("value", "2200");
+        $('#hiegth_win input').attr("value", "1500");
+        $('#width_win input').attr("value", "750");
+        $('#width_door input').attr("value", "700");
+        $('#hiegth_door input').attr("value", "2200");
+
         document.getElementById("width_win").style.display = "flex";
         document.getElementById("width_const").style.display = "flex";
         document.getElementById("hiegth_win").style.display = "flex";
@@ -239,13 +304,20 @@ $("#next").on("click", function(e) {
         }
         for (j = 0; j < 1; j++) {
             img += `<img src=\"${constructor_img_door}\" onclick=\"changeIMG_door(${i + j
-        })\" id=\"${i + j}\"  alt=\"\">`;
+                })\" id=\"${i + j}\"  alt=\"\">`;
         }
         count_1 = 1;
         count_2 = 1;
         count_3 = 1;
         count_4 = 1;
         count_door = 1;
+
+        $('#width_const input').attr("value", "2200");
+        $('#hiegth_win input').attr("value", "1500");
+        $('#width_win input').attr("value", "750");
+        $('#width_door input').attr("value", "700");
+        $('#hiegth_door input').attr("value", "2200");
+
         document.getElementById("width_win").style.display = "flex";
         document.getElementById("width_const").style.display = "flex";
         document.getElementById("hiegth_win").style.display = "flex";
@@ -257,13 +329,20 @@ $("#next").on("click", function(e) {
         }
         for (j = 0; j < 1; j++) {
             img += `<img src=\"${constructor_img_win}\" onclick=\"changeIMG_win(${i + j
-        })\" id=\"${i + j}\" alt=\"\">`;
+                })\" id=\"${i + j}\" alt=\"\">`;
         }
         count_1 = 1;
         count_2 = 1;
         count_3 = 1;
         count_4 = 1;
         count_door = 1;
+
+        $('#width_const input').attr("value", "2200");
+        $('#hiegth_win input').attr("value", "1500");
+        $('#width_win input').attr("value", "750");
+        $('#width_door input').attr("value", "700");
+        $('#hiegth_door input').attr("value", "2200");
+
         document.getElementById("width_win").style.display = "flex";
         document.getElementById("width_const").style.display = "flex";
         document.getElementById("hiegth_win").style.display = "flex";
@@ -275,13 +354,20 @@ $("#next").on("click", function(e) {
         }
         for (j = 0; j < 2; j++) {
             img += `<img src=\"${constructor_img_win}\" onclick=\"changeIMG_win(${i + j
-        })\" id=\"${i + j}\" alt=\"\">`;
+                })\" id=\"${i + j}\" alt=\"\">`;
         }
         count_1 = 1;
         count_2 = 1;
         count_3 = 1;
         count_4 = 1;
         count_door = 1;
+
+        $('#width_const input').attr("value", "2200");
+        $('#hiegth_win input').attr("value", "1500");
+        $('#width_win input').attr("value", "750");
+        $('#width_door input').attr("value", "700");
+        $('#hiegth_door input').attr("value", "2200");
+
         document.getElementById("width_win").style.display = "flex";
         document.getElementById("width_const").style.display = "flex";
         document.getElementById("hiegth_win").style.display = "flex";
@@ -293,13 +379,20 @@ $("#next").on("click", function(e) {
         }
         for (j = 0; j < 3; j++) {
             img += `<img src=\"${constructor_img_win}\" onclick=\"changeIMG_win(${i + j
-        })\" id=\"${i + j}\" alt=\"\">`;
+                })\" id=\"${i + j}\" alt=\"\">`;
         }
         count_1 = 1;
         count_2 = 1;
         count_3 = 1;
         count_4 = 1;
         count_door = 1;
+
+        $('#width_const input').attr("value", "2200");
+        $('#hiegth_win input').attr("value", "1500");
+        $('#width_win input').attr("value", "750");
+        $('#width_door input').attr("value", "700");
+        $('#hiegth_door input').attr("value", "2200");
+
         document.getElementById("width_win").style.display = "flex";
         document.getElementById("width_const").style.display = "flex";
         document.getElementById("hiegth_win").style.display = "flex";
@@ -311,17 +404,24 @@ $("#next").on("click", function(e) {
         }
         for (j = 0; j < 1; j++) {
             img += `<img src=\"${constructor_img_door}\" onclick=\"changeIMG_door(${i + j
-        })\" id=\"${i + j}\"  alt=\"\">`;
+                })\" id=\"${i + j}\"  alt=\"\">`;
         }
         for (g = 0; g < 1; g++) {
             img += `<img src=\"${constructor_img_win}\" onclick=\"changeIMG_win(${i + j + g
-        })\" id=\"${i + j + g}\" alt=\"\">`;
+                })\" id=\"${i + j + g}\" alt=\"\">`;
         }
         count_1 = 1;
         count_2 = 1;
         count_3 = 1;
         count_4 = 1;
         count_door = 1;
+
+        $('#width_const input').attr("value", "2200");
+        $('#hiegth_win input').attr("value", "1500");
+        $('#width_win input').attr("value", "750");
+        $('#width_door input').attr("value", "700");
+        $('#hiegth_door input').attr("value", "2200");
+
         document.getElementById("width_win").style.display = "flex";
         document.getElementById("width_const").style.display = "flex";
         document.getElementById("hiegth_win").style.display = "flex";
@@ -343,22 +443,67 @@ $("#back_2").on("click", function() {
 
 $("#next_2").on("click", function() {
 
-    $(".Step_2").css("display", "none")
-    $(".Step_3").css("display", "flex")
+    var width_const = $("#width_const input").val().trim();
+    var hiegth_win = $("#hiegth_win input").val().trim();
+    var width_win = $("#width_win input").val().trim();
+    var width_door = $("#width_door input").val().trim();
+    var hiegth_door = $("#hiegth_door input").val().trim();
 
-    let img_1 = "";
-    var lastIMG = [];
-    var Constructor_img = document.querySelectorAll(".Constructor_img img");
-    var i = 0;
-    Constructor_img.forEach((element) => {
+    let errors = 0;
 
-        lastIMG.push(element.src);
-        img_1 += `<img src=\"${element.src}\" id=\"imgLast${i}\" alt=\"\">`;
+    if (width_const > 10000 || width_const == "") {
+        $("#width_const input").css("border-color", "red");
+        errors++;
+    } else {
+        $("#width_const input").css("border-color", "");
+    }
+    if (hiegth_win > 10000 || hiegth_win == "") {
+        $("#hiegth_win input").css("border-color", "red");
+        errors++;
+    } else {
+        $("#hiegth_win input").css("border-color", "");
+    }
+    if (width_win > 10000 || width_win == "") {
+        $("#width_win input").css("border-color", "red");
+        errors++;
+    } else {
+        $("#width_win input").css("border-color", "");
+    }
+    if (width_door > 10000 || width_door == "") {
+        $("#width_door input").css("border-color", "red");
+        errors++;
+    } else {
+        $("#width_door input").css("border-color", "");
+    }
+    if (hiegth_door > 10000 || hiegth_door == "") {
+        $("#hiegth_door input").css("border-color", "red");
+        errors++;
+    } else {
+        $("#hiegth_door input").css("border-color", "");
+    }
 
-        i++;
-    });
+    if (errors > 0) {
+        $(".Step_3").css("display", "none")
+        $(".Step_2").css("display", "flex")
+    } else {
 
-    $(".Constructor_result_img").html(img_1);
+        $(".Step_2").css("display", "none")
+        $(".Step_3").css("display", "flex")
+
+        let img_1 = "";
+        var lastIMG = [];
+        var Constructor_img = document.querySelectorAll(".Constructor_img img");
+        var i = 0;
+        Constructor_img.forEach((element) => {
+
+            lastIMG.push(element.src);
+            img_1 += `<img src=\"${element.src}\" id=\"imgLast${i}\" alt=\"\">`;
+
+            i++;
+        });
+
+        $(".Constructor_result_img").html(img_1);
+    }
 });
 
 var addOption = [];
@@ -465,75 +610,106 @@ $("#next_3").on("click", function() {
 
 
     $('#sendFormBTN').on('click', function() {
+        let errors = 0;
+        let user_phone = $(".user_phone").val().trim();
+        let user_name = $("#user_name").val().trim();
 
-
-
-        var imgLenght = $(".Constructor_result_img img").length;
-        var lastImg = [];
-        for (let i = 0; i < imgLenght; i++) {
-            lastImg[i] = $(`#imgLast${i}`).attr('src');
-        }
-
-
-
-
-
-
-
-
-        if (glassOption_1 == "") {
-            glassOption_1 = "нет";
+        if (!validatePhone(user_phone)) {
+            $(".user_phone").css("border-color", "red");
+            $('#user_phone_error').html("*Номер введён некорректно! Пример: (+7)(8)()9876543210")
+            errors++;
         } else {
-            glassOption_1 = "да";
+            $(".user_phone").css("border-color", "");
+            $('#user_phone_error').html("")
         }
-
-        if (glassOption_2 == "") {
-            glassOption_2 = "нет";
+        if (user_name == "") {
+            $("#user_name").css("border-color", "red");
+            errors++;
+        } else if (user_name.length > 30) {
+            $("#user_name").css("border-color", "red");
+            $('#user_name_error').html("*Имя не может состоять больше чем из 30 символов!");
+            errors++;
         } else {
-            glassOption_2 = "да";
+            $("#user_name").css("border-color", "");
+            $('#user_name_error').html("");
         }
+        console.log(errors);
+        if (errors == 0) {
 
-        if (addOption_text == "") {
-            addOption_text = "нет";
-        }
+            var imgLenght = $(".Constructor_result_img img").length;
+            var lastImg = [];
+            for (let i = 0; i < imgLenght; i++) {
 
-        let user_phone = $(".user_phone").val();
-        let user_name = $(".user_name").val();
+                lastImg[i] = $(`#imgLast${i}`).attr('src') + "";
 
-
-        $.ajax({
-            url: "./mail.php",
-            type: "POST",
-            cache: false,
-            data: {
-                lastImg: lastImg,
-                user_phone: user_phone,
-                user_name: user_name,
-                Profile: Profile_type,
-                Double_glazed_windows: Double_glazed_windows,
-                glassOption_1: glassOption_1,
-                glassOption_2: glassOption_2,
-                Profile_color: Profile_color,
-                Otliv_Size: Otliv_Size,
-                Windowsill_Size: Windowsill_Size,
-                addOption_text: addOption_text
-            },
-            beforeSend: function() {
-                $("#sendFormBTN").prop("disabled", true);
-            },
-            success: function(data) {
-                if (!data) {
-                    alert("Ошибка");
-                } else {
-                    alert("Сообщение отправленно администратору. Ожидайте звонка.");
-                    location.reload(true);
-                    return false;
-                }
-                $("#sendFormBTN").prop("disabled", false);
             }
-        })
+
+            if (glassOption_1 == "") {
+                glassOption_1 = "нет";
+            } else {
+                glassOption_1 = "да";
+            }
+
+            if (glassOption_2 == "") {
+                glassOption_2 = "нет";
+            } else {
+                glassOption_2 = "да";
+            }
+
+            if (addOption_text == "") {
+                addOption_text = "нет";
+            }
 
 
+            let data = new FormData();
+            data.append("lastImg", lastImg);
+            data.append("user_phone", user_phone);
+            data.append("user_name", user_name);
+            data.append("Profile", Profile_type);
+            data.append("Double_glazed_windows", Double_glazed_windows);
+            data.append("glassOption_1", glassOption_1);
+            data.append("glassOption_2", glassOption_2);
+            data.append("Profile_color", Profile_color);
+            data.append("Otliv_Size", Otliv_Size);
+            data.append("Windowsill_Size", Windowsill_Size);
+            data.append("addOption_text", addOption_text);
 
+            data.append("width_const", $("#width_const input").val().trim()); // ширина конструкции
+            data.append("hiegth_win", $("#hiegth_win input").val().trim()); // высота окна
+            data.append("width_win", $("#width_win input").val().trim()); // ширина окна
+            data.append("width_door", $("#width_door input").val().trim()); // ширина двери
+            data.append("hiegth_door", $("#hiegth_door input").val().trim()); // высота двери
+
+            $.ajax({
+                url: "./mail.php",
+                type: "POST",
+                cache: false,
+                data: data,
+                processData: false,
+                contentType: false,
+                dataType: "text",
+                beforeSend: function() {
+                    $("#sendFormBTN").prop("disabled", true);
+                    $("#sendFormBTN").css("display", "none");
+                    $("#sendFormBTNLoading").css("display", "initial");
+                },
+                success: function(data) {
+                    $("#sendFormBTN").css("display", "initial");
+                    $("#sendFormBTNLoading").css("display", "none");
+                    if (data == "success") {
+                        alert("Сообщение отправленно администратору. Ожидайте звонка.");
+                        location.reload(true);
+                        return false;
+                    } else {
+                        alert("*Ошибка. Попробуйте повторить позже");
+                        //alert(data);
+                        /* location.reload(true);
+                        return false; */
+                        $("#sendFormBTN").prop("disabled", false);
+                    }
+                    alert(data)
+                }
+            })
+        }
     })
 });

@@ -79,3 +79,15 @@
         width: 100%;
     }
 }
+
+.t-info-two td:first-child {
+    width: 30px;
+}
+
+.t-info-two td:nth-child(2) {
+    width: 520px;
+}
+
+.t-info-two td {
+    padding: 5px 10px;
+}

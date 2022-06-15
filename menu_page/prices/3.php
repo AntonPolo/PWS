@@ -3,13 +3,13 @@
 
         <h1>Цены на регулировку и ремонт окон.</h1>
 
-        <p><img class=" jch-lazyloaded" style="margin-bottom: 20px;" src="https://www.okna-yes.ru/images/images_old/zamenastek1.jpg" alt="" style="vertical-align: top; max-width: 500px; height:375px;"></p>
+        <img class=" jch-lazyloaded" src="https://www.okna-yes.ru/images/images_old/zamenastek1.jpg" alt="" style="vertical-align: top; max-width: 800px; height:375px; margin-bottom: 20px;">
 
         <h2>Прайс-лист на услуги по регулировке и ремонту окон на 2022 год.</h2>
 
         <div>
             <div>
-                <table>
+                <table class='t-info-two'>
                     <tbody>
                         <tr>
                             <td colspan="3">Служба оконного сервиса</td>

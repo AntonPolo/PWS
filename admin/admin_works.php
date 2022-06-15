@@ -4,7 +4,7 @@
 <div class="container admin">
     <div style="display: flex;align-items: center;justify-content: space-between;">
         <form enctype="multipart/form-data" method="post" style="margin-bottom: 20px;">
-            <p>Загрузка нового изображения для <strong>«Наши работы»</strong></p>
+            <p>Загрузка нового изображения для <strong>«Наши работы»</strong> (.webp)</p>
 
             <div class="inner_form_works" style="display: flex;gap: 20px;align-content: center;align-items: center; flex-wrap: wrap;">
                 <!--<input type="file" name="works_img" id="works-img" accept="image/jpg" style="display: none;">
@@ -15,7 +15,7 @@
                 <span style="background: #50a0ff; padding: 5px 10px; height: 40px; color: #fff; display: flex; align-items: center; cursor: pointer; max-width: 1107px;">
                     <img src="/img/download.png" alt="Выберите файл" style="height: 30px;">
                     <!--<label for="slide-img" style="cursor: pointer;">Выберите файл</label>-->
-                    <input type="file" name="works_img" id="works-img" accept="image/jpeg,image/png">
+                    <input type="file" name="works_img" id="works-img" accept="image/webp">
                 </span>
                 <label for="works_img" id="works_img_message"></label>
                 <input type="text" id="works_text" placeholder="Введите описание работы" style="height: 40px; border: 1px solid #50a0ff;">
@@ -212,7 +212,7 @@
                 if (($_GET['go'] + 10) < $count_1) :
                 ?>
                     <li class="page-item">
-                        <a class="page-link" href="./?admin_page=works_page&go=<? print($_GET['go'] + 10); ?>&page_num=<? echo $_GET['page_num'] + 1; ?>">Следующая</a>
+                        <a class="page-link" href="./adminPanel.php?admin_page=works_page&go=<? print($_GET['go'] + 10); ?>&page_num=<? echo $_GET['page_num'] + 1; ?>">Следующая</a>
                     </li>
             <?
                 endif;

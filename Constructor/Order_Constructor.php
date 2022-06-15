@@ -267,13 +267,15 @@
                         <div>
                             <div class="input-group">
                                 <!--<label><b>Номер телефона:</b></label>-->
-                                <input type="tel" class="form-control user_phone" pattern="[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}" placeholder="Номер Телефона" required>
+                                <input type="tel" class="form-control user_phone" pattern="/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/" placeholder="Номер Телефона" required style="width: 100%;">
+                                <label id="user_phone_error" style="color: red; font-size: 11px;"></label>
                             </div>
                         </div>
                         <div>
                             <div class="input-group">
                                 <!--<label><b>Имя:</b></label>-->
-                                <input type="text" class="form-control user_name" placeholder="Ваше Имя" required>
+                                <input type="text" class="form-control user_name" id="user_name" placeholder="Ваше Имя" required style="width: 100%;">
+                                <label id="user_name_error" style="color: red; font-size: 11px;"></label>
                             </div>
                         </div>
                     </div>
@@ -283,6 +285,7 @@
             <div class="button-const">
                 <button class="button_prev" id="back_3">Назад</button>
                 <input type="button" value="Отправить" id="sendFormBTN" class="const-b-send">
+                <input type="button" value=" " id="sendFormBTNLoading" class="const-b-send loading_class">
             </div>
         </div>
     </form>
